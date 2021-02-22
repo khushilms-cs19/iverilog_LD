@@ -1,0 +1,41 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000015765c52490 .scope module, "fulladder" "fulladder" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "cin";
+    .port_info 3 /OUTPUT 1 "s";
+    .port_info 4 /OUTPUT 1 "cout";
+o0000015765c870c8 .functor BUFZ 1, C4<z>; HiZ drive
+o0000015765c870f8 .functor BUFZ 1, C4<z>; HiZ drive
+L_0000015765bfa3e0 .functor XOR 1, o0000015765c870c8, o0000015765c870f8, C4<0>, C4<0>;
+o0000015765c87128 .functor BUFZ 1, C4<z>; HiZ drive
+L_0000015765c52de0 .functor XOR 1, L_0000015765bfa3e0, o0000015765c87128, C4<0>, C4<0>;
+L_0000015765c52f40 .functor AND 1, o0000015765c870c8, o0000015765c870f8, C4<1>, C4<1>;
+L_0000015765bfe7c0 .functor AND 1, o0000015765c870f8, o0000015765c87128, C4<1>, C4<1>;
+L_0000015765bfe830 .functor OR 1, L_0000015765c52f40, L_0000015765bfe7c0, C4<0>, C4<0>;
+L_0000015765bfe8a0 .functor AND 1, o0000015765c87128, o0000015765c870c8, C4<1>, C4<1>;
+L_0000015765bfe910 .functor OR 1, L_0000015765bfe830, L_0000015765bfe8a0, C4<0>, C4<0>;
+v0000015765bfa340_0 .net *"_ivl_0", 0 0, L_0000015765bfa3e0;  1 drivers
+v0000015765c52620_0 .net *"_ivl_10", 0 0, L_0000015765bfe8a0;  1 drivers
+v0000015765c526c0_0 .net *"_ivl_4", 0 0, L_0000015765c52f40;  1 drivers
+v0000015765c52760_0 .net *"_ivl_6", 0 0, L_0000015765bfe7c0;  1 drivers
+v0000015765c52800_0 .net *"_ivl_8", 0 0, L_0000015765bfe830;  1 drivers
+v0000015765c528a0_0 .net "a", 0 0, o0000015765c870c8;  0 drivers
+v0000015765bfe5f0_0 .net "b", 0 0, o0000015765c870f8;  0 drivers
+v0000015765bfe690_0 .net "cin", 0 0, o0000015765c87128;  0 drivers
+v0000015765c81a40_0 .net "cout", 0 0, L_0000015765bfe910;  1 drivers
+v0000015765c819a0_0 .net "s", 0 0, L_0000015765c52de0;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "fulladder.v";

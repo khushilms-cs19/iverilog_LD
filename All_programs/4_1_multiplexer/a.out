@@ -1,0 +1,53 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001f76e462b20 .scope module, "mux4to1" "mux4to1" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /INPUT 1 "d";
+    .port_info 4 /INPUT 1 "sel1";
+    .port_info 5 /INPUT 1 "sel2";
+    .port_info 6 /OUTPUT 1 "y";
+o000001f76e497098 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001f76e44acd0 .functor AND 1, o000001f76e497098, L_000001f76e44ad40, L_000001f76e44adb0, C4<1>;
+o000001f76e497218 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001f76e44ad40 .functor NOT 1, o000001f76e497218, C4<0>, C4<0>, C4<0>;
+o000001f76e497248 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001f76e44adb0 .functor NOT 1, o000001f76e497248, C4<0>, C4<0>, C4<0>;
+o000001f76e497188 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001f76e44ae20 .functor AND 1, o000001f76e497188, L_000001f76e44ae90, o000001f76e497248, C4<1>;
+L_000001f76e44ae90 .functor NOT 1, o000001f76e497218, C4<0>, C4<0>, C4<0>;
+o000001f76e4971b8 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001f76e44af00 .functor AND 1, o000001f76e4971b8, o000001f76e497218, L_000001f76e44af70, C4<1>;
+L_000001f76e44af70 .functor NOT 1, o000001f76e497248, C4<0>, C4<0>, C4<0>;
+o000001f76e4971e8 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001f76e492800 .functor AND 1, o000001f76e4971e8, o000001f76e497218, o000001f76e497248, C4<1>;
+L_000001f76e492990 .functor OR 1, L_000001f76e44acd0, L_000001f76e44ae20, L_000001f76e44af00, L_000001f76e492800;
+v000001f76e462cb0_0 .net *"_ivl_0", 0 0, L_000001f76e44ad40;  1 drivers
+v000001f76e462d50_0 .net *"_ivl_2", 0 0, L_000001f76e44adb0;  1 drivers
+v000001f76e462df0_0 .net *"_ivl_4", 0 0, L_000001f76e44ae90;  1 drivers
+v000001f76e44a920_0 .net *"_ivl_6", 0 0, L_000001f76e44af70;  1 drivers
+v000001f76e44a9c0_0 .net "a", 0 0, o000001f76e497098;  0 drivers
+v000001f76e44aa60_0 .net "and1", 0 0, L_000001f76e44acd0;  1 drivers
+v000001f76e44ab00_0 .net "and2", 0 0, L_000001f76e44ae20;  1 drivers
+v000001f76e44aba0_0 .net "and3", 0 0, L_000001f76e44af00;  1 drivers
+v000001f76e491fc0_0 .net "and4", 0 0, L_000001f76e492800;  1 drivers
+v000001f76e491b60_0 .net "b", 0 0, o000001f76e497188;  0 drivers
+v000001f76e492100_0 .net "c", 0 0, o000001f76e4971b8;  0 drivers
+v000001f76e4926a0_0 .net "d", 0 0, o000001f76e4971e8;  0 drivers
+v000001f76e491e80_0 .net "sel1", 0 0, o000001f76e497218;  0 drivers
+v000001f76e492420_0 .net "sel2", 0 0, o000001f76e497248;  0 drivers
+v000001f76e4924c0_0 .net "y", 0 0, L_000001f76e492990;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "mux4to1.v";

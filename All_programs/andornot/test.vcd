@@ -1,0 +1,41 @@
+$date
+	Mon Feb 22 13:15:35 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module andornot_tb $end
+$var wire 3 ! y [2:0] $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$scope module ob $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 3 $ y [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 $
+0#
+0"
+b1 !
+$end
+#20
+b11 !
+b11 $
+1#
+#40
+b10 !
+b10 $
+0#
+1"
+#60
+b110 !
+b110 $
+1#
+#80

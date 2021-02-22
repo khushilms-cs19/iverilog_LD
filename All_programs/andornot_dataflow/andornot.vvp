@@ -1,0 +1,61 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000024e3ce48870 .scope module, "tb_andornot" "tb_andornot" 2 2;
+ .timescale 0 0;
+v0000024e3ce4af20_0 .var "a", 0 0;
+v0000024e3cf624d0_0 .var "b", 0 0;
+v0000024e3cf62570_0 .net "y", 2 0, L_0000024e3cf62610;  1 drivers
+S_0000024e3ce4abb0 .scope module, "dut" "andornot" 2 5, 3 1 0, S_0000024e3ce48870;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 3 "y";
+L_0000024e3cf62dc0 .functor AND 1, v0000024e3ce4af20_0, v0000024e3cf624d0_0, C4<1>, C4<1>;
+L_0000024e3ce4d480 .functor OR 1, v0000024e3ce4af20_0, v0000024e3cf624d0_0, C4<0>, C4<0>;
+L_0000024e3cf626b0 .functor NOT 1, v0000024e3ce4af20_0, C4<0>, C4<0>, C4<0>;
+v0000024e3cf62b80_0 .net *"_ivl_11", 0 0, L_0000024e3cf626b0;  1 drivers
+v0000024e3cf96790_0 .net *"_ivl_2", 0 0, L_0000024e3cf62dc0;  1 drivers
+v0000024e3ce47a10_0 .net *"_ivl_6", 0 0, L_0000024e3ce4d480;  1 drivers
+v0000024e3ce4ad40_0 .net "a", 0 0, v0000024e3ce4af20_0;  1 drivers
+v0000024e3ce4ade0_0 .net "b", 0 0, v0000024e3cf624d0_0;  1 drivers
+v0000024e3ce4ae80_0 .net "y", 2 0, L_0000024e3cf62610;  alias, 1 drivers
+L_0000024e3cf62610 .concat8 [ 1 1 1 0], L_0000024e3cf626b0, L_0000024e3ce4d480, L_0000024e3cf62dc0;
+    .scope S_0000024e3ce48870;
+T_0 ;
+    %vpi_call 2 8 "$dumpfile", "andornot.vcd" {0 0 0};
+    %vpi_call 2 9 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000024e3ce48870 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000024e3ce4af20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000024e3cf624d0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000024e3ce4af20_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000024e3cf624d0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000024e3ce4af20_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000024e3cf624d0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000024e3ce4af20_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000024e3cf624d0_0, 0, 1;
+    %delay 50, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_andornot.v";
+    "./andornot.v";

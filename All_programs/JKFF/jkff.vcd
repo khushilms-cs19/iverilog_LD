@@ -1,0 +1,48 @@
+$date
+	Mon Feb 22 14:50:59 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_JK_FF $end
+$var wire 1 ! qb $end
+$var wire 1 " q $end
+$var reg 1 # clk $end
+$var reg 1 $ j $end
+$var reg 1 % k $end
+$var reg 1 & reset $end
+$scope module flipflop $end
+$var wire 1 # clk $end
+$var wire 1 $ j $end
+$var wire 1 % k $end
+$var wire 1 & reset $end
+$var reg 1 " q $end
+$var reg 1 ! q_bar $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1&
+0%
+0$
+1#
+0"
+1!
+$end
+#100
+1$
+0&
+#200
+1%
+0$
+#300
+1$
+#400
+0%
+0$
+#500
+1&
